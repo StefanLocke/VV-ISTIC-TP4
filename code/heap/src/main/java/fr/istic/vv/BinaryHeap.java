@@ -2,16 +2,19 @@ package fr.istic.vv;
 
 import java.util.Comparator;
 
-public class BinaryHeap<T> {
+public abstract class BinaryHeap<T> {
 
-    public BinaryHeap(Comparator<T> comparator) {  }
+        Comparator<T> comparator;
+        BinaryHeap(Comparator<T> comparator) {
+                this.comparator = comparator;
+        }
 
-    public T pop() { return null; }
+        public abstract T pop();
 
-    public T peek() { return null; }
+        public abstract T peek();
 
-    public void push(T element) { }
+        public abstract void push(T element);
 
-    public int count() { return 0; }
+        public abstract int count();
 
 }
