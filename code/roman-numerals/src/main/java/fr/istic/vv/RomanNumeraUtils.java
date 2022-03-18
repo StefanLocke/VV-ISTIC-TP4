@@ -74,15 +74,19 @@ public class RomanNumeraUtils {
                 int value = 0;
                 for (int i = 0; i < numeral.length();i++) {
                         int current = values.get(numeral.charAt(i));
-                        int next = values.get(numeral.charAt(i+1));
-                        if (current < next) {
-                                value += (next - current);
-                                i++;
+                        if (i < numeral.length()-1) {
+                                int next = values.get(numeral.charAt(i+1));
+                                if (current < next) {
+                                        value += (next - current);
+                                        i++;
+                                }else {
+                                        value += current;
+                                }
                         }else {
                                 value += current;
                         }
-                }
 
+                }
                 return value;
         }
 

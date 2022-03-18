@@ -1,1 +1,3 @@
 Found a bug for toRomanNumeral where if we give the number 0  to parse it would have a NPE
+
+Bug index out of bounds for roman -> integer

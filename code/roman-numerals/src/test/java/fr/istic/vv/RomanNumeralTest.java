@@ -41,20 +41,16 @@ public class RomanNumeralTest {
     }
 
     @Property
-    boolean romanNumeralCheck_ValidSubtractors(@ForAll("generateRomanString") String roman) {
-        return false;
-    };
+    boolean doubleCheck(@ForAll("validInt") int number){
+        String roman = RomanNumeraUtils.toRomanNumeral(number);
+        return number == RomanNumeraUtils.parseRomanNumeral(roman);
+    }
+
 
     @Property
     boolean romanNumeralCheck_WithRegex(@ForAll("generateRomanString") String roman) {
         return roman.matches("^M{0,4}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$");
     };
-
-
-
-
-
-
 
 
     @Provide
