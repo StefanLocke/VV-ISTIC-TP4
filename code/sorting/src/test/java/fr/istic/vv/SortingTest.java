@@ -52,10 +52,6 @@ public class SortingTest {
         Object[] array = list.toArray();
         Object[] target = Arrays.stream(list.toArray()).sorted(comparator).toArray();
         Sorting.mergesort(array,comparator);
-        System.out.println("QUICKSORT");
-        printArray(array);
-        printArray(target);
-        System.out.println(compareArrays(array,target));
         return compareArrays(array, target);
     }
 
